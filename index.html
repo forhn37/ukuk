@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>나는</h1>
-    <h1>날개달린</h1>
-    <h1>호랑이다</h1>
-</body>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li data-set="rlagus1">피카츄</li>
+        <li data-set="rlagus2">라이츄</li>
+        <li data-set="rlagus3">파이리</li>
+      </ul>
+    </div>
+    <script>
+      const root = document.getElementById("root");
+      const ul = root.children[0];
+      console.log(ul);
+
+      ul.addEventListener("click", (event) => {
+        let datasetTarget = event.target.dataset.set;
+        if (datasetTarget === "rlagus1") {
+          event.target.style.color = "green";
+          for (let i = 0; i < ul.children.length; i++) {
+            console.log(ul)
+            if(ul.children[i] !== event.target) {
+                ul.children[i].style.color = 'red';
+            }
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
