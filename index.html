@@ -24,9 +24,9 @@
         if (datasetTarget === "rlagus1") {
           event.target.style.color = "green";
           for (let i = 0; i < ul.children.length; i++) {
-            console.log(ul)
-            if(ul.children[i] !== event.target) {
-                ul.children[i].style.color = 'red';
+            console.log(ul);
+            if (ul.children[i] !== event.target) {
+              ul.children[i].style.opacity = 0;
             }
           }
         }
